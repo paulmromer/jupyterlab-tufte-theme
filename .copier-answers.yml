@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.4
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: paul@paulromer.net
+author_name: Paul Romer
+has_binder: false
+has_settings: false
+kind: theme
+labextension_name: tufte_theme_js
+project_short_description: A JupyterLab theme derived from tufte-css.
+python_name: tufte_theme
+repository: https://github.com/paulmromer/jupyterlab-tufte-theme
+test: true
+
