@@ -2,7 +2,7 @@
 
 [![Github Actions Status](https://github.com/paulmromer/jupyterlab-tufte-theme/workflows/Build/badge.svg)](https://github.com/paulmromer/jupyterlab-tufte-theme/actions/workflows/build.yml)
 
-A JupyterLab theme inspired by tufte-css
+A JupyterLab theme inspired by https://github.com/edwardtufte/tufte-css
 
 ## Requirements
 

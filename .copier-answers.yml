@@ -7,7 +7,7 @@ has_binder: false
 has_settings: false
 kind: theme
 labextension_name: Tufte
-project_short_description: A JupyterLab theme inspired by tufte-css
+project_short_description: A JupyterLab theme inspired by https://github.com/edwardtufte/tufte-css
 python_name: Tufte
 repository: https://github.com/paulmromer/jupyterlab-tufte-theme
 test: false
