@@ -1,8 +1,8 @@
-# tufte_theme
+# Tufte
 
 [![Github Actions Status](https://github.com/paulmromer/jupyterlab-tufte-theme/workflows/Build/badge.svg)](https://github.com/paulmromer/jupyterlab-tufte-theme/actions/workflows/build.yml)
 
-A JupyterLab theme derived from tufte-css.
+A JupyterLab theme inspired by tufte-css
 
 ## Requirements
 
@@ -13,7 +13,7 @@ A JupyterLab theme derived from tufte-css.
 To install the extension, execute:
 
 ```bash
-pip install tufte_theme
+pip install Tufte
 ```
 
 ## Uninstall
@@ -21,7 +21,7 @@ pip install tufte_theme
 To remove the extension, execute:
 
 ```bash
-pip uninstall tufte_theme
+pip uninstall Tufte
 ```
 
 ## Contributing
@@ -36,7 +36,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # Clone the repo to your local environment
-# Change directory to the tufte_theme directory
+# Change directory to the Tufte directory
 # Install package in development mode
 pip install -e "."
 # Link your development version of the extension with JupyterLab
@@ -65,32 +65,12 @@ jupyter lab build --minimize=False
 ### Development uninstall
 
 ```bash
-pip uninstall tufte_theme
+pip uninstall Tufte
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
-folder is located. Then you can remove the symlink named `tufte_theme_js` within that folder.
-
-### Testing the extension
-
-#### Frontend tests
-
-This extension is using [Jest](https://jestjs.io/) for JavaScript code testing.
-
-To execute them, execute:
-
-```sh
-jlpm
-jlpm test
-```
-
-#### Integration tests
-
-This extension uses [Playwright](https://playwright.dev/docs/intro) for the integration tests (aka user level tests).
-More precisely, the JupyterLab helper [Galata](https://github.com/jupyterlab/jupyterlab/tree/master/galata) is used to handle testing the extension in JupyterLab.
-
-More information are provided within the [ui-tests](./ui-tests/README.md) README.
+folder is located. Then you can remove the symlink named `Tufte` within that folder.
 
 ### Packaging the extension
 

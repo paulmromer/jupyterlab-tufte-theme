@@ -1,13 +1,12 @@
+[build-system]
+requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-nodejs-version>=0.3.2"]
+build-backend = "hatchling.build"
+
 [project]
-name = "jupyterlab_tufte_theme"
-version = "0.0.2"
-authors = [
-  { name="Paul Romer", email="paul@paulromer.net" },
-]
-description = "A theme for JupyterLab"
+name = "Tufte"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.12"
+requires-python = ">=3.8"
 classifiers = [
     "Framework :: Jupyter",
     "Framework :: Jupyter :: JupyterLab",
@@ -17,19 +16,15 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Operating System :: OS Independent",
 ]
-
-[project.urls]
-Homepage = "https://github.com/paulmromer/jupyterlab-tufte-theme"
-
-
-
-[build-system]
-requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-nodejs-version>=0.3.2"]
-build-backend = "hatchling.build"
-
+dependencies = [
+]
+dynamic = ["version", "description", "authors", "urls", "keywords"]
 
 [tool.hatch.version]
 source = "nodejs"
@@ -38,23 +33,23 @@ source = "nodejs"
 fields = ["description", "authors", "urls"]
 
 [tool.hatch.build.targets.sdist]
-artifacts = ["tufte_theme/labextension"]
+artifacts = ["Tufte/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"tufte_theme/labextension" = "share/jupyter/labextensions/tufte_theme_js"
-"install.json" = "share/jupyter/labextensions/tufte_theme_js/install.json"
+"Tufte/labextension" = "share/jupyter/labextensions/Tufte"
+"install.json" = "share/jupyter/labextensions/Tufte/install.json"
 
 [tool.hatch.build.hooks.version]
-path = "tufte_theme/_version.py"
+path = "Tufte/_version.py"
 
 [tool.hatch.build.hooks.jupyter-builder]
 dependencies = ["hatch-jupyter-builder>=0.5"]
 build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
-    "tufte_theme/labextension/package.json",
+    "Tufte/labextension/package.json",
 ]
-skip-if-exists = ["tufte_theme/labextension/static/style.js"]
+skip-if-exists = ["Tufte/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 build_cmd = "build:prod"
@@ -64,7 +59,7 @@ npm = ["jlpm"]
 build_cmd = "install:extension"
 npm = ["jlpm"]
 source_dir = "src"
-build_dir = "tufte_theme/labextension"
+build_dir = "Tufte/labextension"
 
 [tool.jupyter-releaser.options]
 version_cmd = "hatch version"

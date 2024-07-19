@@ -6,19 +6,19 @@ import {
 import { IThemeManager } from '@jupyterlab/apputils';
 
 /**
- * Initialization data for the tufte_theme_js extension.
+ * Initialization data for the Tufte extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'tufte_theme_js:plugin',
-  description: 'A JupyterLab theme derived from tufte-css.',
+  id: 'Tufte:plugin',
+  description: 'A JupyterLab theme inspired by tufte-css',
   autoStart: true,
   requires: [IThemeManager],
   activate: (app: JupyterFrontEnd, manager: IThemeManager) => {
-    console.log('JupyterLab extension tufte_theme_js is activated!');
-    const style = 'tufte_theme_js/index.css';
+    console.log('JupyterLab extension Tufte is activated!');
+    const style = 'Tufte/index.css';
 
     manager.register({
-      name: 'tufte_theme_js',
+      name: 'Tufte',
       isLight: true,
       load: () => manager.loadCSS(style),
       unload: () => Promise.resolve(undefined)

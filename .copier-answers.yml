@@ -2,13 +2,13 @@
 _commit: v4.3.4
 _src_path: https://github.com/jupyterlab/extension-template
 author_email: paul@paulromer.net
-author_name: Paul Romer
+author_name: Paul M Romer
 has_binder: false
 has_settings: false
 kind: theme
-labextension_name: tufte_theme_js
-project_short_description: A JupyterLab theme derived from tufte-css.
-python_name: tufte_theme
+labextension_name: Tufte
+project_short_description: A JupyterLab theme inspired by tufte-css
+python_name: Tufte
 repository: https://github.com/paulmromer/jupyterlab-tufte-theme
-test: true
+test: false
 
