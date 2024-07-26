@@ -1,26 +1,26 @@
 @font-face {
-  font-family: "et-book";
-  src: url(d91b696831eb8ca54b88.woff2) format("woff2");
+  font-family: 'et-book';
+  font-style: normal;
+  src: url('tufte-roman/tufte-roman.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
-}
+  font-display: block;}
 
 @font-face {
-  font-family: "et-book";
-  src: url(cb0f222810f953bcf5b4.woff2) format("woff2");
+  font-family: 'et-book';
+  src: url('tufte-italic/tufte-italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
-  font-display: block;
-}
+  font-display: block;}
 
 @font-face {
-  font-family: "et-book";
-  src: url(4ea0083eeb01333f8f22.woff2) format("woff2");
+  font-family: 'et-book';
+  src: url('tufte-bold/tufte-bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
-  font-display: block;
-}
+  font-display: block;}
+
+
 
 /*     /////////////////////////////////////// ALL VARIABLES ////////////////////////////////////////     */
 
