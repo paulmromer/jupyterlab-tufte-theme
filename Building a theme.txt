@@ -1,0 +1,36 @@
+Building a theme 
+
+1. Make sure that there is an active venv with these libraries installed: 
+
+    copier
+    jinja2-time
+    jupyterlab
+    twine
+    build
+
+2. In the build directory, run 
+
+    copier copy --trust https://github.com/jupyterlab/extension-template .
+
+
+3. Run 
+    python -m build 
+
+
+4. To post to testpypi run: 
+
+    python -m twine upload -r testpypi dist/*
+
+
+5. For other build options, also install: 
+    
+    hatchling 
+    hatch-nodejs-version>=0.3.2
+    hatch-jupyter-builder>=0.5
+
+Then run 
+    python -m build -w -v -n 
+
+-w = wheel 
+-v = verbose 
+-n = not isolated (so the build is done locally, not in a tmp file)
