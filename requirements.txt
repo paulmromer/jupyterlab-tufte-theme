@@ -1,5 +1,0 @@
-copier
-jinja2-time
-jupyterlab
-build
-twine
