@@ -49,7 +49,7 @@ build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
     "Tufte/labextension/package.json",
 ]
-skip-if-exists = [""]
+skip-if-exists = ["Tufte/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 build_cmd = "build:prod"
