@@ -20,14 +20,11 @@
   font-display: block;}
 
 
-/*     /////////////////////////////////////// ALL VARIABLES ////////////////////////////////////////     */
+
 
 
 /*     /////////////////////////////////////// JL VARIABLES ////////////////////////////////////////     */
 
-/* A copy of all of the variables from JupyterLab */
-/* In this section, variables that are not used are commented out and hence are not set. */
-/* Variables that are overwritten by Tufte variables are also commented out so they are set in one place. */
 
 :root {
   /* Elevation
@@ -40,7 +37,6 @@
 
 /* Unset all of these to get the desired flat look for JupyterLab */ 
 
-/* ===============================================================
   --jp-shadow-base-lightness: 0;
   --jp-shadow-umbra-color: rgba(
     var(--jp-shadow-base-lightness),
@@ -89,7 +85,7 @@
     0 24px 38px 3px var(--jp-shadow-penumbra-color),
     0 9px 46px 8px var(--jp-shadow-ambient-color);
 
-    ========================================================= */
+/*    ========================================================= */
 
     /* Borders
    *
@@ -457,29 +453,28 @@
   --jp-sidebar-min-width: 180px;
 }
 
-/*     /////////////////////////////////////// OVERWRITES ////////////////////////////////////////     */
 
 :root {
   /* Tufte Settings */
   --tufte-line-height: 1.3;
-  --tufte-content-font-size1: 20px;
+  --tufte-content-font-size1: 14px;
   --tufte-content-font-family: 'et-book', 'Times New Roman', Times, serif;
   --tufte-dark-color: #111; 
   --tufte-offwhite: #fffff8;
   --tufte-layout-color0: #fffff8; 
   --tufte-layout-color1: #f9f9f9;
   --tufte-layout-color2: #eeeeee; 
-  --tufte-layout-color3: #dddddd; /*#eeeeee;*/
-  --tufte-layout-color4: #dddddd; /*e0e0e0;*/
+  --tufte-layout-color3: #dddddd; 
+  --tufte-layout-color4: #dddddd; 
   --tufte-border-color: #eeeeee;
-  --tufte-code-background-color: #f5f5f5;
+  --tufte-code-background-color: #f4f4f4;
 
   --tufte-code-display-font-size: 0.9rem;
   --tufte-code-cell-font-size: 0.7rem;
   --tufte-code-line-height: 1.3077;
   --tufte-code-padding: 0px; 
 
-  --tufte-notebook-padding: 0px; 
+  --tufte-notebook-padding: 10px; 
 
   --tufte-editor-font-size: 1em;
   --tufte-content-font-size1: 20px;
@@ -491,10 +486,7 @@
   --tufte-sidenote-left-position: 650px;
 
   --tufte-content-padding-right: 400px;
-  --tufte-margin-top: 0.5rem;
-  --tufte-margin-bottom: 0.5rem;
-  --tufte-half-margin: 0.5rem;
-  --tufte-quarter-margin: 0.25rem;
+
 }
 
 :root {
@@ -539,7 +531,7 @@
 
 
   /* Notebook specific styles */
-  --jp-notebook-padding: --tufte-notebook-padding;
+  --jp-notebook-padding: var(--tufte-notebook-padding);
 
   /* Input field styles */
     /*  When a cell becomes active, the background gets lighter and the border turns blue */
@@ -570,8 +562,6 @@
 div.jp-RenderedHTMLCommon p::first-letter {
   font-size: 1.25em;
   color: var(--jp-brand-color0);
-  /* border-radius: 2px;
-  background: var(--jp-brand-color4); */
 }
 
 div.no-new-p {
@@ -595,18 +585,6 @@ div.tight mjx-container[jax="CHTML"][display="true"] {
   padding: 5px;
 }
 
-
-div.tight pre.center {
-  width: max-content;
-  background: var(--tufte-code-background-color);
-  font-size: var(--tufte-code-display-font-size);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 5px 2px 5px 6px;
-}
-
 pre.center {
   width: max-content;
   background: var(--tufte-code-background-color);
@@ -614,7 +592,11 @@ pre.center {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  padding: 0 2px 0px 6px;
+  padding: 2px 2px 2px 2px;
+}
+
+div.tight pre.center {
+  margin-bottom: 0px;
 }
 
 .jp-RenderedHTMLCommon p {
@@ -723,7 +705,13 @@ jp-OutputArea-output {
   background: var(--tufte-code-background-color); 
   margin-top: 0px;
   margin-bottom: 20px;
-  padding: 0 2px 0 6px;
+  padding: 2px 2px 2px 2px;
+}
+
+pre.center {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
@@ -731,8 +719,6 @@ div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
 }
 
 .jp-OutputArea .jp-RenderedText {
-  /* margin-top: 0px;  */
-  /* margin-bottom: 20px; */
   border: 0px;
   padding-left: 0px;
   background: var(--tufte-code-background-color);
