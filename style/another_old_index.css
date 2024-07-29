@@ -18,10 +18,28 @@
   font-weight: bold;
   font-style: normal;
   font-display: block;}
-
+  
 
 /*     /////////////////////////////////////// ALL VARIABLES ////////////////////////////////////////     */
 
+:root {
+  /* Tufte Settings */
+  --tufte-line-height: 1.3;
+  --tufte-content-font-size1: 20px;
+  --tufte-content-font-family: 'et-book', 'Times New Roman', Times, serif;
+  --tufte-dark-color: #111; 
+  --tufte-offwhite: #fffff8;
+  --tufte-code-font-size: 0.8rem;
+  --tufte-editor-font-size: 1em;
+  --tufte-content-font-size1: 20px;
+  --tufte-content-width: 1100px;
+  --tufte-content-padding-right: 400px;
+  --tufte-margin-top: 0.5em;
+  --tufte-margin-bottom: 0.5em;
+  --tufte-sidenote-color: var(--md-grey-700, #616161);
+  --tufte-half-margin: 0.5em;
+  --tufte-quarter-margin: 0.25em;
+}
 
 /*     /////////////////////////////////////// JL VARIABLES ////////////////////////////////////////     */
 
@@ -97,11 +115,10 @@
    */
 
   --jp-border-width: 1px;
-  --jp-border-color0: var(--md-grey-400, #bdbdbd);
-  --jp-border-color1: var(--md-grey-400, #bdbdbd);
-  --jp-border-color2: var(--md-grey-300, #e0e0e0);
-  --jp-border-color3: var(--md-grey-200, #eee);
-  --jp-inverse-border-color: var(--md-grey-600, #757575);
+  --jp-border-color0: var(--md-grey-400);
+  --jp-border-color1: var(--md-grey-400);
+  --jp-border-color2: var(--md-grey-300);
+  --jp-border-color3: var(--md-grey-200);
   --jp-border-radius: 2px;
 
   /* UI Fonts
@@ -178,8 +195,7 @@
   --jp-content-font-color1: rgba(0, 0, 0, 0.87);
   --jp-content-font-color2: rgba(0, 0, 0, 0.54);
   --jp-content-font-color3: rgba(0, 0, 0, 0.38);
-  --jp-content-link-color: var(--md-blue-900, #0d47a1);
-  --jp-content-link-visited-color: var(--md-purple-700, #7b1fa2);
+  --jp-content-link-color: var(--md-blue-700);
   --jp-content-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI',
     helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
@@ -195,7 +211,7 @@
 
   --jp-code-line-height: 1.3077; /* 17px for 13px base */
 
-  /* --jp-code-padding: 5px; */  /* 5px for 13px base */
+  /* --jp-code-padding: 0.385em; */  /* 0.385em, 5px for 13px base */
 
   --jp-code-font-family-default: menlo, consolas, 'DejaVu Sans Mono', monospace;
   --jp-code-font-family: var(--jp-code-font-family-default);
@@ -217,9 +233,9 @@
   /* Overwrite to have more control over greys and to set the offwhite background */ 
   /* --jp-layout-color0: white; */
   /* --jp-layout-color1: white; */
-  /* --jp-layout-color2: var(--md-grey-200, #eee); */
-  /* --jp-layout-color3: var(--md-grey-400, #bdbdbd); */
-  /* --jp-layout-color4: var(--md-grey-600, #757575); */
+  /* --jp-layout-color2: var(--md-grey-200); */
+  /* --jp-layout-color3: var(--md-grey-400); */
+  /* --jp-layout-color4: var(--md-grey-600); */
 
   /* Inverse Layout
    *
@@ -236,7 +252,8 @@
   /* Brand/accent */
 
 --jp-brand-color0: var(--md-blue-900, #0d47a1);
---jp-brand-color1: var(--md-blue-700, #1976d2);
+/* --jp-brand-color1: var(--md-blue-700, #1976d2); */
+--jp-brand-color1: #e3f2fd;
 --jp-brand-color2: var(--md-blue-300, #64b5f6);
 --jp-brand-color3: var(--md-blue-100, #bbdefb);
 --jp-brand-color4: var(--md-blue-50, #e3f2fd);
@@ -246,26 +263,27 @@
 --jp-accent-color3: var(--md-green-100, #c8e6c9);
 
   /* State colors (warn, error, success, info) */
-  --jp-warn-color0: var(--md-orange-900, #e65100);
-  --jp-warn-color1: var(--md-orange-700, #f57c00);
-  --jp-warn-color2: var(--md-orange-300, #ffb74d);
-  --jp-warn-color3: var(--md-orange-100, #ffe0b2);
-  --jp-error-color0: var(--md-red-900, #b71c1c);
-  --jp-error-color1: var(--md-red-700, #d32f2f);
-  --jp-error-color2: var(--md-red-300, #e57373);
-  --jp-error-color3: var(--md-red-100, #ffcdd2);
-  --jp-success-color0: var(--md-green-900, #1b5e20);
-  --jp-success-color1: var(--md-green-700, #388e3c);
-  --jp-success-color2: var(--md-green-300, #81c784);
-  --jp-success-color3: var(--md-green-100, #c8e6c9);
-  --jp-info-color0: var(--md-cyan-900, #006064);
-  --jp-info-color1: var(--md-cyan-700, #0097a7);
-  --jp-info-color2: var(--md-cyan-300, #4dd0e1);
-  --jp-info-color3: var(--md-cyan-100, #b2ebf2);
+
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
+  --jp-warn-color2: var(--md-orange-300);
+  --jp-warn-color3: var(--md-orange-100);
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
+  --jp-error-color2: var(--md-red-300);
+  --jp-error-color3: var(--md-red-100);
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
+  --jp-success-color2: var(--md-green-300);
+  --jp-success-color3: var(--md-green-100);
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
+  --jp-info-color2: var(--md-cyan-300);
+  --jp-info-color3: var(--md-cyan-100);
 
   /* Cell specific styles */
 
-  /* --jp-cell-padding: 5px; */
+  --jp-cell-padding: 5px;
   --jp-cell-collapser-width: 8px;
   --jp-cell-collapser-min-height: 20px;
   --jp-cell-collapser-not-active-hover-opacity: 0.6;
@@ -277,12 +295,11 @@
   /* --jp-cell-editor-active-border-color: var(--jp-brand-color1) */
 
   --jp-cell-prompt-width: 64px;
-  --jp-cell-prompt-font-family: var(--jp-code-font-family-default);
+  --jp-cell-prompt-font-family: 'Source Code Pro', monospace;
   --jp-cell-prompt-letter-spacing: 0;
   --jp-cell-prompt-opacity: 1;
   --jp-cell-prompt-not-active-opacity: 0.5;
-  --jp-cell-prompt-not-active-font-color: var(--md-grey-700, #616161);
-
+  --jp-cell-prompt-not-active-font-color: var(--md-grey-700);
 
   /* A custom blend of MD grey and blue 600
    * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
@@ -297,7 +314,7 @@
   /* Overwrite */
   /* --jp-notebook-padding: 10px; */
   --jp-notebook-select-background: var(--jp-layout-color1);
-  --jp-notebook-multiselected-color: var(--md-blue-50,  #e3f2fd);
+  --jp-notebook-multiselected-color: var(--md-blue-50);
 
   /* The scroll padding is calculated to fill enough space at the bottom of the
   notebook to show one single-line cell (with appropriate padding) at the top
@@ -313,7 +330,7 @@
   /* Rendermime styles */
 
   --jp-rendermime-error-background: #fdd;
-  --jp-rendermime-table-row-background: var(--md-grey-100,  #cfd8dc);
+  --jp-rendermime-table-row-background: var(--md-grey-100);
   --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
 
   /* Dialog specific styles */
@@ -327,13 +344,15 @@
   /* Toolbar specific styles */
 
   --jp-toolbar-border-color: var(--jp-border-color1);
+  /* --jp-toolbar-border-color: #ff0000; */
   --jp-toolbar-micro-height: 8px;
   --jp-toolbar-background: var(--jp-layout-color1);
-  --jp-toolbar-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.24); 
+  /* --jp-toolbar-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
   --jp-toolbar-header-margin: 4px 4px 0 4px;
-  --jp-toolbar-active-background: var(--md-grey-300, #90a4ae);
 
-  /* --jp-toolbar-active-background: var(--jp-layout-color1);  */
+  /* ??? */
+  /* --jp-toolbar-active-background: var(--md-grey-600, #757575);  */
+  --jp-toolbar-active-background: var(--md-grey-900, #212121); 
 
   /* Statusbar specific styles */
 
@@ -341,28 +360,19 @@
 
   /* Input field styles */
 
-  --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300, #64b5f6);
-  --jp-input-active-background: var(--jp-layout-color1);
-  --jp-input-hover-background: var(--jp-layout-color1);
-  --jp-input-background: var(--md-grey-100, #f5f5f5);
-  --jp-input-border-color: var(--jp-inverse-border-color);
-  --jp-input-active-border-color: var(--jp-brand-color1);
-  --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
-
-  /* Will try these below: */
-  /* --jp-input-box-shadow: inset 0 0 2px var(--md-blue-700, #1976d2); */
-  /* --jp-input-active-background: var(--md-grey-100, #f5f5f5); */
-  /* --jp-input-hover-background: var(--md-grey-200, #eee);  */
-  /* --jp-input-background: var(--md-grey-200, #eee);  */
+  /* --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300); */
+  --jp-input-box-shadow: inset 0 0 2px var(--md-blue-700, #1976d2);
+  /* --jp-input-active-background: var(--jp-layout-color1);
+  /* --jp-input-background: var(--md-grey-100, #f5f5f5); */
   /* --jp-input-border-color: var(--jp-inverse-border-color); */
   /* --jp-input-active-border-color: var(--jp-brand-color1); */
   /* --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3); */
 
 
   /* General editor styles */
-  --jp-editor-selected-background: #d9d9d9;
-  --jp-editor-selected-focused-background: #d7d4f0; 
-  --jp-editor-cursor-color: var(--jp-ui-font-color0);
+  /* --jp-editor-selected-background: #d9d9d9; */
+  /* --jp-editor-selected-focused-background: #d7d4f0; */
+    --jp-editor-cursor-color: var(--jp-ui-font-color0);
 
   /* Code mirror specific styles */
 
@@ -370,7 +380,7 @@
   --jp-mirror-editor-atom-color: #88f;
   --jp-mirror-editor-number-color: #080;
   --jp-mirror-editor-def-color: #00f;
-  --jp-mirror-editor-variable-color: var(--md-grey-900, #212121);
+  --jp-mirror-editor-variable-color: var(--md-grey-900);
   --jp-mirror-editor-variable-2-color: #05a;
   --jp-mirror-editor-variable-3-color: #085;
   --jp-mirror-editor-punctuation-color: #05a;
@@ -393,13 +403,29 @@
 
   /* User colors */
 
-  --jp-collaborator-color1: #ffad8e;
-  --jp-collaborator-color2: #dac83d;
-  --jp-collaborator-color3: #72dd76;
-  --jp-collaborator-color4: #00e4d0;
-  --jp-collaborator-color5: #45d4ff;
-  --jp-collaborator-color6: #e2b1ff;
-  --jp-collaborator-color7: #ff9de6;
+  --jp-collaborator-color1: #ad4a00;
+  --jp-collaborator-color2: #7b6a00;
+  --jp-collaborator-color3: #007e00;
+  --jp-collaborator-color4: #008772;
+  --jp-collaborator-color5: #0079b9;
+  --jp-collaborator-color6: #8b45c6;
+  --jp-collaborator-color7: #be208b;
+
+  /* File or activity icons and switch semantic variables */
+
+  --jp-jupyter-icon-color: var(--md-orange-900);
+  --jp-notebook-icon-color: var(--md-orange-700);
+  --jp-json-icon-color: var(--md-orange-700);
+  --jp-console-icon-background-color: var(--md-blue-700);
+  --jp-console-icon-color: white;
+  --jp-terminal-icon-background-color: var(--md-grey-200);
+  --jp-terminal-icon-color: var(--md-grey-800);
+  --jp-text-editor-icon-color: var(--md-grey-200);
+  --jp-inspector-icon-color: var(--md-grey-200);
+  --jp-switch-color: var(--md-grey-400);
+  --jp-switch-true-position-color: var(--md-orange-700);
+  --jp-switch-cursor-color: rgba(0, 0, 0, 0.4);
+
 
   /* Vega extension styles */
 
@@ -407,103 +433,26 @@
 
   /* Sidebar-related styles */
 
-  --jp-sidebar-min-width: 250px;
-
-  /* Search-related styles */
-
-  --jp-search-toggle-off-opacity: 0.5;
-  --jp-search-toggle-hover-opacity: 0.8;
-  --jp-search-toggle-on-opacity: 1;
-  --jp-search-selected-match-background-color: rgb(245, 200, 0);
-  --jp-search-selected-match-color: black;
-  --jp-search-unselected-match-background-color: var(
-    --jp-inverse-layout-color0
-  );
-  --jp-search-unselected-match-color: var(--jp-ui-inverse-font-color0);
-
-  /* Icon colors that work well with light or dark backgrounds */
-  --jp-icon-contrast-color0: var(--md-purple-600, #8e24aa);
-  --jp-icon-contrast-color1: var(--md-green-600, #43a047);
-  --jp-icon-contrast-color2: var(--md-pink-600, #d81b60);
-  --jp-icon-contrast-color3: var(--md-blue-600, #1e88e5);
-
-  /* Button colors */
-  --jp-accept-color-normal: var(--md-blue-700, #1976d2);
-  --jp-accept-color-hover: var(--md-blue-800, #1565c0);
-  --jp-accept-color-active: var(--md-blue-900, #0d47a1);
-  --jp-warn-color-normal: var(--md-red-700, #d32f2f);
-  --jp-warn-color-hover: var(--md-red-800, #c62828);
-  --jp-warn-color-active: var(--md-red-900, #b71c1c);
-  --jp-reject-color-normal: var(--md-grey-600, #757575);
-  --jp-reject-color-hover: var(--md-grey-700, #616161);
-  --jp-reject-color-active: var(--md-grey-800, #424242);
-
-  /* File or activity icons and switch semantic variables */
-  --jp-jupyter-icon-color: #f37626;
-  --jp-notebook-icon-color: #f37626;
-  --jp-json-icon-color: var(--md-orange-700, #f57c00);
-  --jp-console-icon-background-color: var(--md-blue-700, #1976d2);
-  --jp-console-icon-color: white;
-  --jp-terminal-icon-background-color: var(--md-grey-800, #424242);
-  --jp-terminal-icon-color: var(--md-grey-200, #eee);
-  --jp-text-editor-icon-color: var(--md-grey-700, #616161);
-  --jp-inspector-icon-color: var(--md-grey-700, #616161);
-  --jp-switch-color: var(--md-grey-400, #bdbdbd);
-  --jp-switch-true-position-color: var(--md-orange-900, #e65100);
-
-  --jp-switch-cursor-color: rgba(0, 0, 0, 0.4);
-
-  /* Sidebar-related styles */
   --jp-sidebar-min-width: 180px;
 }
 
 /*     /////////////////////////////////////// OVERWRITES ////////////////////////////////////////     */
 
 :root {
-  /* Tufte Settings */
-  --tufte-line-height: 1.3;
-  --tufte-content-font-size1: 20px;
-  --tufte-content-font-family: 'et-book', 'Times New Roman', Times, serif;
-  --tufte-dark-color: #111; 
-  --tufte-offwhite: #fffff8;
-  --tufte-layout-color0: #fffff8; 
-  --tufte-layout-color1: #f9f9f9;
-  --tufte-layout-color2: #eeeeee; 
-  --tufte-layout-color3: #dddddd; /*#eeeeee;*/
-  --tufte-layout-color4: #dddddd; /*e0e0e0;*/
-  --tufte-border-color: #eeeeee;
-  --tufte-code-background-color: #f5f5f5;
-
-  --tufte-code-display-font-size: 0.9rem;
-  --tufte-code-cell-font-size: 0.7rem;
-  --tufte-code-line-height: 1.3077;
-  --tufte-code-padding: 0px; 
-
-  --tufte-notebook-padding: 0px; 
-
-  --tufte-editor-font-size: 1em;
-  --tufte-content-font-size1: 20px;
-  --tufte-content-width: 1100px;
-
-  --tufte-sidenote-width: 350px;
-  --tufte-sidenote-font-size: 0.9rem;
-  --tufte-sidenote-lineheight: 1.2;
-  --tufte-sidenote-left-position: 650px;
-
-  --tufte-content-padding-right: 400px;
-  --tufte-margin-top: 0.5rem;
-  --tufte-margin-bottom: 0.5rem;
-  --tufte-half-margin: 0.5rem;
-  --tufte-quarter-margin: 0.25rem;
-}
-
-:root {
   /*  Content  */
 
-  --jp-border-color0: var(--tufte-border-color);
-  --jp-border-color1: var(--tufte-border-color);
-  --jp-border-color2: var(--tufte-border-color);
-  --jp-border-color3: var(--tufte-border-color);
+  --jp-border-width: 1px;
+  /* --jp-border-color0: var(--jp-layout-color3);*/
+  /* --jp-border-color1: var(--jp-layout-color1); */
+  --jp-border-color2: var(--jp-layout-color2);
+  --jp-border-color3: var(--jp-layout-color3);
+
+  --jp-border-color0: #f5f5f5;  /* top rows */
+  --jp-border-color1: #eeeeee;  /* thin lines  */
+  /* --jp-border-color2: #0000ff;
+  --jp-border-color3: #000000; */
+  --jp-border-radius: 2px;
+
 
   --jp-content-line-height: var(--tufte-line-height);
   --jp-content-font-size1: var(--tufte-content-font-size1);  
@@ -511,7 +460,7 @@
   --jp-content-font-family: var(--tufte-content-font-family);
   
   /*  Code  */
-  --jp-code-font-size: var(--tufte-code-cell-font-size);
+  --jp-code-font-size: var(--tufte-code-font-size);
   --jp-code-line-height: 1.3077; 
   --jp-code-padding: 0em; 
 
@@ -521,37 +470,38 @@
     * theme these would go from light to dark.
     */
 
-  --jp-layout-color0: var(--tufte-layout-color0);
-  --jp-layout-color1: var(--tufte-layout-color1);
-  --jp-layout-color2: var(--tufte-layout-color2);
-  --jp-layout-color3: var(--tufte-layout-color3);
-  --jp-layout-color4: var(--tufte-layout-color4);
-    
+  --jp-layout-color0: var(--tufte-offwhite);
+  --jp-layout-color1: var(--md-grey-100, #f5f5f5);
+  /* --jp-layout-color2: var(--md-grey-200, #eeeeee); */
+  --jp-layout-color2: #eeeeee;
+  /* --jp-layout-color3: var(--md-grey-300, #e0e0e0); */
+  /* --jp-layout-color3: var(--md-grey-100); */
+  --jp-layout-color3: #eeeeee;
+
     
   /* Cell specific styles */
   --jp-cell-padding: 0px;  
 
-
-  --jp-cell-editor-background: var(--tufte-layout-color2);
-  --jp-cell-editor-border-color: var(--tufte-layout-color2);
-  --jp-cell-editor-active-background: var(--tufte-layout-color1);
-  --jp-cell-editor-active-border-color: var(--tufte-brand-color1);
+  --jp-cell-editor-background: var(--jp-layout-color2);
+  --jp-cell-editor-border-color: var(--jp-layout-color2);
+  --jp-cell-editor-active-background: var(--jp-layout-color1);
+  --jp-cell-editor-active-border-color: var(--jp-brand-color1);
 
 
   /* Notebook specific styles */
-  --jp-notebook-padding: --tufte-notebook-padding;
+  --jp-notebook-padding: 0px;
 
   /* Input field styles */
     /*  When a cell becomes active, the background gets lighter and the border turns blue */
   --jp-input-active-background: var(--jp-layout-color1);
   --jp-input-hover-background: var(--jp-layout-color1);
-  --jp-input-background: var(--jp-layout-color1);
-  --jp-input-border-color: var(--jp-layout-color1);
+  --jp-input-background: var(--jp-layout-color2);
+  --jp-input-border-color: var(--jp-layout-color2);
   --jp-input-active-border-color: var(--jp-brand-color1);
 
   /* General editor styles */
-  /* --jp-editor-selected-background: var(--jp-layout-color1); */
-  /*  --jp-editor-selected-focused-background: #bdbdbd;  */
+  --jp-editor-selected-background: var(--jp-layout-color1);
+  --jp-editor-selected-focused-background: #bdbdbd; 
 
 }
 
@@ -561,91 +511,37 @@
   font-size: var(--jp-content-font-size1);
 } */
 
-
 .jp-WindowedPanel-viewport {
     margin: auto;
     width: var(--tufte-content-width);
   }
 
-div.jp-RenderedHTMLCommon p::first-letter {
-  font-size: 1.25em;
-  color: var(--jp-brand-color0);
-  /* border-radius: 2px;
-  background: var(--jp-brand-color4); */
-}
-
-div.no-new-p {
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
-
-div.no-new-p p::first-letter {
-  font-size: var(--jp-content-font-size1);
-  color: var(--jp-content-font-color1);
-}
-
-div.tight {
-  margin-top: -15px;
-  margin-bottom: 25px;
-}
-
-div.tight mjx-container[jax="CHTML"][display="true"] {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 5px;
-}
-
-
-div.tight pre.center {
-  width: max-content;
-  background: var(--tufte-code-background-color);
-  font-size: var(--tufte-code-display-font-size);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 5px 2px 5px 6px;
-}
-
-pre.center {
-  width: max-content;
-  background: var(--tufte-code-background-color);
-  font-size: var(--tufte-code-display-font-size);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  padding: 0 2px 0px 6px;
-}
-
-div.tight ul{
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.jp-RenderedHTMLCommon p {
-  margin-bottom: 20px;
-}
+.jp-RenderedHTMLCommon ul {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;  
+  }
 
 aside {
   float: right; 
   clear: right; 
   margin-right: 0px;
-  width: var(--tufte-sidenote-width);
-  font-size: var(--tufte-sidenote-font-size);
-  line-height: var(--tufte-sidenote-lineheight);
+  width: 350px;
+  font-size: 0.9rem;
+  line-height: 1.2;
   hyphens: auto; 
   color: var(--tufte-offwhite);
   transition: color 0.5s;
 }
 
+
 aside.t {
   position: absolute; 
-  top: 5px; left: var(--tufte-sidenote-left-position);
+  top: 5px; left: 650px;
 }
 
 aside.b {
   position: absolute; 
-  bottom: 5px; left: var(--tufte-sidenote-left-position);
+  bottom: 5px; left: 650px;
 }
 
 aside:hover {
@@ -674,10 +570,15 @@ aside > a:active {
 }
 
 .rarrow {
-  color: var(--tufte-dark-color) !important;
+  color: var(--tufte-sidenote-color) !important;
+ font-weight: bold;
 }
 
-/* Get rid of the box for markdown */
+.reminder {
+  color: var(--tufte-sidenote-color) !important;
+}
+
+/* Get rid of the box */
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active:focus-visible {
     outline: none;
     border: none;
@@ -685,26 +586,35 @@ aside > a:active {
     box-shadow: 0 0 0 0px #fffff8;
 }
 
-nav.rules {
+nav {
   border-top: 0.5px solid var(--tufte-dark-color);
   border-bottom: 0.5px solid var(--tufte-dark-color);
   padding-bottom: 2px;
 }
 
-jp-OutputArea-output {
-  margin-bottom: 20px;
+div.lm-Widget.jp-RenderedText.jp-OutputArea-output {
+  margin-bottom: var(--tufte-quarter-margin);
   border: 0px;
 }
 
 .jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputWrapper {
   margin-top: 0px;
-  font-size: var(--tufte-code-cell-font-size) !important;
 }
 
-.jp-RenderedHTMLCommon > :last-child {
-  margin-bottom: 20px;
+div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
+  margin-bottom: 0.25em;
 }
 
+/* .jp-RenderedHTMLCommon > :last-child {
+  margin-bottom: 0em;
+} */
+
+.jp-RenderedHTMLCommon p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+/* Headings - italics for even */
 .jp-RenderedHTMLCommon {
   line-height: var(--tufte-line-height);
   font-size: var(--tufte-content-font-size1);
@@ -712,7 +622,7 @@ jp-OutputArea-output {
   padding-right: var(--tufte-content-padding-right);
   border: 0px;
   margin-bottom: 0px;
-}
+} 
 
 .jp-RenderedHTMLCommon h2,
 .jp-RenderedHTMLCommon h4,
@@ -720,61 +630,87 @@ jp-OutputArea-output {
   font-style: italic;
 }
 
+div.lm-Widget.jp-RenderedText.jp-OutputArea-output {
+  background: var(--jp-layout-color1);
+  border: 0px;
+  /* border: var(--jp-border-width) solid var(--jp-cell-editor-border-color); */
+  margin-bottom: var(--tufte-half-margin)
+}
 
 .jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code, pre{
   font-family: var(--jp-code-font-family);
-  font-size: var(--tufte-code-display-font-size);
+  font-size: var(--jp-code-font-size) !important;
   line-height: var(--jp-code-line-height);
-  background: var(--tufte-code-background-color); 
-  margin-top: 0px;
-  margin-bottom: 20px;
+  background: var(--jp-layout-color1) !important; 
+  margin-bottom: var(--tufte-half-margin);
   padding: 0 2px 0 6px;
-}
-
-div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
-  margin-bottom: 5px;
 }
 
 .jp-OutputArea .jp-RenderedText {
-  /* margin-top: 0px;  */
-  /* margin-bottom: 20px; */
-  border: 0px;
   padding-left: 0px;
-  background: var(--tufte-code-background-color);
 }
 
 .jp-OutputArea-output {
-  background: var(--jp-layout-color1);
-  margin-top: 0px;
-  margin-bottom: 5px;
-  border: 0px;
   padding-left: 0px;
-  background: var(--tufte-jp-layout-color1);
+  background: var(--jp-layout-color1);
 }
 
 .jp-OutputArea-output pre {
-  font-size: var(--tufte-code-cell-font-size);
-  border: 0px;
   padding: 0 2px 0 6px;
 }
 
+.jp-RenderedHTMLCommon pre {
+  padding: 0 2px 0 6px;
+}
+
+.jp-RenderedHTMLCommon p {
+  margin-bottom: var(--tufte-half-margin);
+}
+
+
 .jp-InputArea-editor{
-  border: 0px;
-  font-size: var(--tufte-code-cell-font-size);
-  background: var(--tufte-code-background-color);
-  margin-top: 0px;
-  margin-bottom: 5px;
+  font-size: var(--tufte-editor-font-size);
+  background: var(--jp-layout-color1);
+  margin-bottom: var(--tufte-quarter-margin);
 }
 
 .jp-CodeCell {
-  font-size: var(--tufte-code-cell-font-size);
   padding-right: var(--tufte-content-padding-right);
-  margin-top: 0px;
-  margin-bottom: 20px;
+  /* padding-bottom: 0.5% !important;  Tweak to fix space between outputs */
+  margin-bottom: var(--tufte-quarter-margin);
 }
 
 .jp-RawCell {
   padding-right: var(--tufte-content-padding-right);
-  margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: var(--tufte-half-margin);
+}
+
+pre.center {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--tufte-quarter-margin);
+  margin-top: var(--tufte-quarter-margin);
+  padding: 2px 2px 2px 6px;
+}
+
+/* .jp-SideBar .lm-TabBar-tab:hover:not(.lm-mod-current), #jp-down-stack .lm-TabBar-tab:hover:not(.lm-mod-current) {
+  background:rgba(255, 255, 255, 0.8);
+} */
+
+.jp-SideBar.lm-TabBar.jp-mod-left .lm-TabBar-tab.lm-mod-current::after {
+  right: calc(-1 * var(--jp-border-width));
+  background:rgba(0, 0, 0, 0.2);
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab.lm-mod-current {
+  background:rgba(0, 0, 0, 0.05);
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab:not(.lm-mod-current) {
+  background:rgba(255, 255, 255, 0.05);
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab.jp-mod-current::before{
+  height: 0px;
 }
