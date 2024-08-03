@@ -20,22 +20,34 @@
   font-display: block;}
 
 
+/* ----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|--------------------------------------------------------------------------- */
 
+/*
+The following CSS variables define the main, public API for styling JupyterLab.
+These variables should be used by all plugins wherever possible. In other
+words, plugins should not define custom colors, sizes, etc unless absolutely
+necessary. This enables users to change the visual theme of JupyterLab
+by changing these variables.
 
+Many variables appear in an ordered sequence (0,1,2,3). These sequences
+are designed to work well together, so for example, `--jp-border-color1` should
+be used with `--jp-layout-color1`. The numbers have the following meanings:
 
-/*     /////////////////////////////////////// JL VARIABLES ////////////////////////////////////////     */
+* 0: super-primary, reserved for special emphasis
+* 1: primary, most important under normal situations
+* 2: secondary, next most important under normal situations
+* 3: tertiary, next most important under normal situations
+
+Throughout JupyterLab, we are mostly following principles from Google's
+Material Design when selecting colors. We are not, however, following
+all of MD as it is not optimized for dense, information rich UIs.
+*/
 
 
 :root {
-  /* Elevation
-   *
-   * We style box-shadows using Material Design's idea of elevation. These particular numbers are taken from here:
-   *
-   * https://github.com/material-components/material-components-web
-   * https://material-components-web.appspot.com/elevation.html
-   */
-
-/* Unset all of these to get the desired flat look for JupyterLab */ 
 
   --jp-shadow-base-lightness: 0;
   --jp-shadow-umbra-color: rgba(
@@ -85,8 +97,6 @@
     0 24px 38px 3px var(--jp-shadow-penumbra-color),
     0 9px 46px 8px var(--jp-shadow-ambient-color);
 
-/*    ========================================================= */
-
     /* Borders
    *
    * The following variables, specify the visual styling of borders in JupyterLab.
@@ -112,9 +122,7 @@
 
   --jp-ui-font-scale-factor: 1.2;
   --jp-ui-font-size0: 0.8333em;
-  
   --jp-ui-font-size1: 13px;     /* Base font size */
-
   --jp-ui-font-size2: 1.2em;
   --jp-ui-font-size3: 1.44em;
   --jp-ui-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica,
@@ -153,10 +161,7 @@
   --jp-content-line-height: 1.6;
   --jp-content-font-scale-factor: 1.2;
   --jp-content-font-size0: 0.8333em;
-
-  /* Overwrite to have more control over content font size */ 
-  /* --jp-content-font-size1: 14px; */  /* Base font size */
-
+  --jp-content-font-size1: 14px;  /* Changed on line 507 */
   --jp-content-font-size2: 1.2em;
   --jp-content-font-size3: 1.44em;
   --jp-content-font-size4: 1.728em;
@@ -186,12 +191,10 @@
    * Code font variables are used for typography of code and other monospaces content.
    */
 
-   /* Overwrite for more control over code font size */ 
-  /* --jp-code-font-size: 13px; */
 
-  --jp-code-line-height: 1.3077; /* 17px for 13px base */
-
-  /* --jp-code-padding: 5px; */  /* 5px for 13px base */
+  --jp-code-font-size: 13px;       /* Changed line 509 */
+  --jp-code-line-height: 1.3077;   /* 17px for 13px base */
+  --jp-code-padding: 5px;          /* Changed on line 510 */
 
   --jp-code-font-family-default: menlo, consolas, 'DejaVu Sans Mono', monospace;
   --jp-code-font-family: var(--jp-code-font-family-default);
@@ -211,11 +214,12 @@
    */
 
   /* Overwrite to have more control over greys and to set the offwhite background */ 
-  /* --jp-layout-color0: white; */
-  /* --jp-layout-color1: white; */
-  /* --jp-layout-color2: var(--md-grey-200, #eee); */
-  /* --jp-layout-color3: var(--md-grey-400, #bdbdbd); */
-  /* --jp-layout-color4: var(--md-grey-600, #757575); */
+  /* Changed after line 460 */
+  --jp-layout-color0: white;
+  --jp-layout-color1: white;
+  --jp-layout-color2: var(--md-grey-200, #eee);
+  --jp-layout-color3: var(--md-grey-400, #bdbdbd);
+  --jp-layout-color4: var(--md-grey-600, #757575);
 
   /* Inverse Layout
    *
@@ -266,11 +270,12 @@
   --jp-cell-collapser-min-height: 20px;
   --jp-cell-collapser-not-active-hover-opacity: 0.6;
 
-  /* --jp-cell-editor-background: var(--md-grey-100, #f5f5f5); */
-  /* --jp-cell-editor-border-color: var(--md-grey-300, #e0e0e0); */
-  /* --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300, #64b5f6); */
-  /* --jp-cell-editor-active-background: var(--jp-layout-color0); */
-  /* --jp-cell-editor-active-border-color: var(--jp-brand-color1) */
+  /* changed after line 530  */ 
+  --jp-cell-editor-background: var(--md-grey-100, #f5f5f5);
+  --jp-cell-editor-border-color: var(--md-grey-300, #e0e0e0);
+  --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300, #64b5f6);
+  --jp-cell-editor-active-background: var(--jp-layout-color0);
+  --jp-cell-editor-active-border-color: var(--jp-brand-color1);
 
   --jp-cell-prompt-width: 64px;
   --jp-cell-prompt-font-family: var(--jp-code-font-family-default);
@@ -301,6 +306,7 @@
   pixel so that no scrollbar appears if we have just one single-line cell in the
   notebook. This padding is to enable a 'scroll past end' feature in a notebook.
   */
+  /* recalculated on line 554 bc vars are changed below  */ 
   --jp-notebook-scroll-padding: calc(
     100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
       var(--jp-code-padding) - var(--jp-cell-padding) - 1px
@@ -345,14 +351,14 @@
   --jp-input-active-border-color: var(--jp-brand-color1);
   --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
 
-  /* Will try these below: */
-  /* --jp-input-box-shadow: inset 0 0 2px var(--md-blue-700, #1976d2); */
-  /* --jp-input-active-background: var(--md-grey-100, #f5f5f5); */
-  /* --jp-input-hover-background: var(--md-grey-200, #eee);  */
-  /* --jp-input-background: var(--md-grey-200, #eee);  */
-  /* --jp-input-border-color: var(--jp-inverse-border-color); */
-  /* --jp-input-active-border-color: var(--jp-brand-color1); */
-  /* --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3); */
+
+  --jp-input-box-shadow: inset 0 0 2px var(--md-blue-700, #1976d2);
+  --jp-input-active-background: var(--md-grey-100, #f5f5f5);
+  --jp-input-hover-background: var(--md-grey-200, #eee); 
+  --jp-input-background: var(--md-grey-200, #eee); 
+  --jp-input-border-color: var(--jp-inverse-border-color);
+  --jp-input-active-border-color: var(--jp-brand-color1);
+  --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
 
 
   /* General editor styles */
@@ -457,19 +463,20 @@
 :root {
   /* Tufte Settings */
   --tufte-line-height: 1.3;
-  --tufte-content-font-size1: 14px;
+  --tufte-content-font-size1: 20px;
   --tufte-content-font-family: 'et-book', 'Times New Roman', Times, serif;
   --tufte-dark-color: #111; 
   --tufte-offwhite: #fffff8;
   --tufte-layout-color0: #fffff8; 
   --tufte-layout-color1: #f9f9f9;
-  --tufte-layout-color2: #eeeeee; 
-  --tufte-layout-color3: #dddddd; 
+  --tufte-layout-color2: #eeeeee;
+  --tufte-layout-color3: #eeeeee; 
   --tufte-layout-color4: #dddddd; 
   --tufte-border-color: #eeeeee;
   --tufte-code-background-color: #f4f4f4;
 
   --tufte-code-display-font-size: 0.9rem;
+  --tufte-code-inline-font-size: 0.9rem;
   --tufte-code-cell-font-size: 0.7rem;
   --tufte-code-line-height: 1.3077;
   --tufte-code-padding: 0px; 
@@ -477,14 +484,12 @@
   --tufte-notebook-padding: 10px; 
 
   --tufte-editor-font-size: 1em;
-  --tufte-content-font-size1: 20px;
   --tufte-content-width: 1100px;
 
   --tufte-sidenote-width: 350px;
   --tufte-sidenote-font-size: 0.9rem;
   --tufte-sidenote-lineheight: 1.2;
   --tufte-sidenote-left-position: 650px;
-
   --tufte-content-padding-right: 400px;
 
 }
@@ -501,11 +506,13 @@
   --jp-content-font-size1: var(--tufte-content-font-size1);  
   --jp-content-link-color: var(--tufte-dark-color); 
   --jp-content-font-family: var(--tufte-content-font-family);
-  
+  --jp-content-font-color0: var(--tufte-dark-color);
+  --jp-content-font-color1: var(--tufte-dark-color);
+
   /*  Code  */
   --jp-code-font-size: var(--tufte-code-cell-font-size);
   --jp-code-line-height: 1.3077; 
-  --jp-code-padding: 0em; 
+  --jp-code-padding: 0px; 
 
   /* Layout
     *
@@ -523,9 +530,8 @@
   /* Cell specific styles */
   --jp-cell-padding: 0px;  
 
-
-  --jp-cell-editor-background: var(--tufte-layout-color2);
-  --jp-cell-editor-border-color: var(--tufte-layout-color2);
+  --jp-cell-editor-background: var(--tufte-code-background-color);
+  --jp-cell-editor-border-color: var(--tufte-code-background-color);
   --jp-cell-editor-active-background: var(--tufte-layout-color1);
   --jp-cell-editor-active-border-color: var(--tufte-brand-color1);
 
@@ -535,23 +541,23 @@
 
   /* Input field styles */
     /*  When a cell becomes active, the background gets lighter and the border turns blue */
+  --jp-input-background: var(--tufte-code-background-color);
+  --jp-input-border-color: var(--tufte-code-background-color);
   --jp-input-active-background: var(--jp-layout-color1);
   --jp-input-hover-background: var(--jp-layout-color1);
-  --jp-input-background: var(--jp-layout-color1);
-  --jp-input-border-color: var(--jp-layout-color1);
   --jp-input-active-border-color: var(--jp-brand-color1);
 
-  /* General editor styles */
+  /* General editor styles -- keep existing values */
   /* --jp-editor-selected-background: var(--jp-layout-color1); */
   /*  --jp-editor-selected-focused-background: #bdbdbd;  */
 
+  /* Recalculate */
+  --jp-notebook-scroll-padding: calc(
+    100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
+      var(--jp-code-padding) - var(--jp-cell-padding) - 1px
+  );
+
 }
-
-/*     /////////////////////////////////////// CSS Classes ////////////////////////////////////////     */
-
-/* body {
-  font-size: var(--jp-content-font-size1);
-} */
 
 
 .jp-WindowedPanel-viewport {
@@ -559,33 +565,35 @@
     width: var(--tufte-content-width);
   }
 
-div.jp-RenderedHTMLCommon p::first-letter {
+.jp-ThemedContainer p::first-letter {
   font-size: 1.25em;
   color: var(--jp-brand-color0);
 }
 
-div.no-new-p {
+.jp-ThemedContainer .no-new-p {
   margin-top: -20px;
   margin-bottom: 20px;
 }
 
-div.no-new-p p::first-letter {
+.jp-ThemedContainer .no-new-p p::first-letter {
   font-size: var(--jp-content-font-size1);
   color: var(--jp-content-font-color1);
 }
 
-div.tight {
+.jp-ThemedContainer .tight {
   margin-top: -15px;
   margin-bottom: 25px;
 }
 
-div.tight mjx-container[jax="CHTML"][display="true"] {
+.jp-ThemedContainer .tight mjx-container[jax="CHTML"][display="true"] {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 5px;
+  font-size-adjust: 1.1
 }
 
-pre.center {
+.jp-ThemedContainer code.center {
+  display: block;
   width: max-content;
   background: var(--tufte-code-background-color);
   font-size: var(--tufte-code-display-font-size);
@@ -595,7 +603,8 @@ pre.center {
   padding: 2px 2px 2px 2px;
 }
 
-div.tight pre.center {
+
+.jp-ThemedContainer .tight code.center {
   margin-bottom: 0px;
 }
 
@@ -603,7 +612,7 @@ div.tight pre.center {
   margin-bottom: 20px;
 }
 
-aside {
+.jp-ThemedContainer aside {
   float: right; 
   clear: right; 
   margin-right: 0px;
@@ -612,45 +621,56 @@ aside {
   line-height: var(--tufte-sidenote-lineheight);
   hyphens: auto; 
   color: var(--tufte-offwhite);
-  transition: color 0.5s;
 }
 
-aside.t {
+.jp-ThemedContainer aside code {
+  background: var(--tufte-offwhite) !important;
+  color: var(--tufte-offwhite) !important;
+}
+
+.jp-ThemedContainer aside.top {
   position: absolute; 
   top: 5px; left: var(--tufte-sidenote-left-position);
 }
 
-aside.b {
+.jp-ThemedContainer aside.bottom {
   position: absolute; 
   bottom: 5px; left: var(--tufte-sidenote-left-position);
 }
 
-aside:hover {
+.jp-ThemedContainer aside:hover {
   color: var(--tufte-dark-color);
-  text-decoration: line !important;
+  transition: color 0.5s;
 }
 
-aside > a:link {
+.jp-ThemedContainer aside:hover code {
+  background: var(--tufte-code-background-color) !important; 
+  color: var(--tufte-font-color) !important;
+  font-size: 0.9em;
+  transition: all 1s;
+}
+
+
+.jp-ThemedContainer aside > a:link {
   color: inherit !important;
-  text-decoration: line !important;
 }
 
-aside > a:visited {
+.jp-ThemedContainer aside > a:visited {
   color: inherit !important;
   text-decoration: none;
 }
 
-aside > a:hover {
+.jp-ThemedContainer aside > a:hover {
   color: inherit !important;
-  text-decoration: line !important;
+  text-decoration: underline !important;
 }
 
-aside > a:active {
+.jp-ThemedContainer aside > a:active {
   color: inherit !important;
   text-decoration: none !important;
 }
 
-.rarrow {
+.jp-ThemedContainer .side-marker {
   color: var(--tufte-dark-color) !important;
 }
 
@@ -662,19 +682,20 @@ aside > a:active {
     box-shadow: 0 0 0 0px #fffff8;
 }
 
-nav.rules {
+.jp-RenderedHTMLCommon .separators {
   border-top: 0.5px solid var(--tufte-dark-color);
   border-bottom: 0.5px solid var(--tufte-dark-color);
   padding-bottom: 2px;
 }
 
-jp-OutputArea-output {
-  margin-bottom: 20px;
-  border: 0px;
+.jp-Notebook .jp-Cell .jp-InputPrompt {
+  padding-top: 4px; 
 }
 
+    /* ???? */
 .jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputWrapper {
   margin-top: 0px;
+  background: var(--tufte-offwhite);
   font-size: var(--tufte-code-cell-font-size) !important;
 }
 
@@ -682,10 +703,11 @@ jp-OutputArea-output {
   margin-bottom: 20px;
 }
 
-.jp-RenderedHTMLCommon {
+.jp-ThemedContainer .jp-RenderedHTMLCommon {
   line-height: var(--tufte-line-height);
   font-size: var(--tufte-content-font-size1);
   font-family: var(--tufte-content-font-family);
+  color: var(--tufte-dark-color);
   padding-right: var(--tufte-content-padding-right);
   border: 0px;
   margin-bottom: 0px;
@@ -697,21 +719,23 @@ jp-OutputArea-output {
   font-style: italic;
 }
 
-
-.jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code, pre{
-  font-family: var(--jp-code-font-family);
-  font-size: var(--tufte-code-display-font-size);
-  line-height: var(--jp-code-line-height);
-  background: var(--tufte-code-background-color); 
-  margin-top: 0px;
-  margin-bottom: 20px;
-  padding: 2px 2px 2px 2px;
+.jp-RenderedHTMLCommon h1 code,
+.jp-RenderedHTMLCommon h2 code,
+.jp-RenderedHTMLCommon h3 code, 
+.jp-RenderedHTMLCommon h4 code,
+.jp-RenderedHTMLCommon h5 code,
+.jp-RenderedHTMLCommon h6 code {
+  font-size: 0.65em !important;
 }
 
-pre.center {
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
+.jp-ThemedContainer .jp-RenderedHTMLCommon code {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--tufte-code-inline-font-size);
+  line-height: var(--jp-code-line-height); 
+  background: var(--tufte-code-background-color) !important; 
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 2px 2px 2px 2px !important;
 }
 
 div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
@@ -725,18 +749,26 @@ div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
 }
 
 .jp-OutputArea-output {
-  background: var(--jp-layout-color1);
+  background: var(--tufte-code-background-color);
   margin-top: 0px;
   margin-bottom: 5px;
   border: 0px;
   padding-left: 0px;
-  background: var(--tufte-jp-layout-color1);
 }
 
-.jp-OutputArea-output pre {
+.jp-ThemedContainer .jp-OutputArea-output code {
   font-size: var(--tufte-code-cell-font-size);
   border: 0px;
-  padding: 0 2px 0 6px;
+  padding: 2px 2px 2px 6px;
+}
+
+
+.jp-Cell-inputCollapser {
+  border-radius: 2px 2px 2px 2px;
+}
+
+.jp-Cell-outputCollapser {
+  border-radius: 2px 2px 2px 2px;
 }
 
 .jp-InputArea-editor{
@@ -744,7 +776,7 @@ div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
   font-size: var(--tufte-code-cell-font-size);
   background: var(--tufte-code-background-color);
   margin-top: 0px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .jp-CodeCell {
@@ -759,3 +791,4 @@ div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
   margin-top: 0px;
   margin-bottom: 20px;
 }
+
