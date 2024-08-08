@@ -474,19 +474,24 @@ all of MD as it is not optimized for dense, information rich UIs.
   --tufte-layout-color4: #dddddd; 
   --tufte-border-color: #eeeeee;
   --tufte-code-background-color: #f4f4f4;
+
   --tufte-code-display-font-size: 0.9rem;
   --tufte-code-inline-font-size: 0.9rem;
   --tufte-code-cell-font-size: 0.7rem;
   --tufte-code-line-height: 1.3077;
   --tufte-code-padding: 0px; 
+
   --tufte-notebook-padding: 10px; 
+
   --tufte-editor-font-size: 1em;
   --tufte-content-width: 1100px;
+
   --tufte-sidenote-width: 350px;
   --tufte-sidenote-font-size: 0.9rem;
   --tufte-sidenote-lineheight: 1.2;
   --tufte-sidenote-left-position: 650px;
   --tufte-content-padding-right: 400px;
+
 }
 
 :root {
@@ -551,7 +556,9 @@ all of MD as it is not optimized for dense, information rich UIs.
     100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
       var(--jp-code-padding) - var(--jp-cell-padding) - 1px
   );
+
 }
+
 
 .jp-WindowedPanel-viewport {
     margin: auto;
@@ -582,7 +589,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 5px;
-  font-size-adjust: 1.0
+  font-size-adjust: 1.1
 }
 
 .jp-ThemedContainer code.center {
@@ -596,11 +603,12 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 2px 2px 2px;
 }
 
+
 .jp-ThemedContainer .tight code.center {
   margin-bottom: 0px;
 }
 
-.jp-ThemedContainer .jp-RenderedHTMLCommon p {
+.jp-RenderedHTMLCommon p {
   margin-bottom: 20px;
 }
 
@@ -642,6 +650,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   transition: all 1s;
 }
 
+
 .jp-ThemedContainer aside > a:link {
   color: inherit !important;
 }
@@ -673,7 +682,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     box-shadow: 0 0 0 0px #fffff8;
 }
 
-.jp-RenderedHTMLCommon .separating_lines {
+.jp-RenderedHTMLCommon .separators {
   border-top: 0.5px solid var(--tufte-dark-color);
   border-bottom: 0.5px solid var(--tufte-dark-color);
   padding-bottom: 2px;
@@ -683,15 +692,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding-top: 4px; 
 }
 
-/* Placeholder content is used when a cell is collapsed */
-.jp-ThemedContainer .jp-Placeholder-content {
-  font-family: var(--jp-code-font-family) !important;
+    /* ???? */
+.jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputWrapper {
+  margin-top: 0px;
+  background: var(--tufte-offwhite);
   font-size: var(--tufte-code-cell-font-size) !important;
-  line-height: var(--jp-code-line-height) !important; 
-  background: var(--tufte-code-background-color) !important; 
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  padding: 2px 2px 2px 6px !important;
 }
 
 .jp-RenderedHTMLCommon > :last-child {
@@ -714,72 +719,49 @@ all of MD as it is not optimized for dense, information rich UIs.
   font-style: italic;
 }
 
-.jp-ThemedContainer .jp-RenderedHTMLCommon h1 code {
-  font-size: 0.65em !important;
-}
-.jp-ThemedContainer .jp-RenderedHTMLCommon h2 code {
-  font-size: 0.65em !important;
-}
-.jp-ThemedContainer .jp-RenderedHTMLCommon h3 code {
-  font-size: 0.65em !important;
-}
-.jp-ThemedContainer .jp-RenderedHTMLCommon h4 code {
-  font-size: 0.65em !important;
-}
-.jp-ThemedContainer .jp-RenderedHTMLCommon h5 code {
-  font-size: 0.65em !important;
-}
-.jp-ThemedContainer .jp-RenderedHTMLCommon h6 code {
+.jp-RenderedHTMLCommon h1 code,
+.jp-RenderedHTMLCommon h2 code,
+.jp-RenderedHTMLCommon h3 code, 
+.jp-RenderedHTMLCommon h4 code,
+.jp-RenderedHTMLCommon h5 code,
+.jp-RenderedHTMLCommon h6 code {
   font-size: 0.65em !important;
 }
 
-
-.jp-ThemedContainer .jp-RenderedHTMLCommon h1 code,
-.jp-ThemedContainer .jp-RenderedHTMLCommon h2 code,
-.jp-ThemedContainer .jp-RenderedHTMLCommon h3 code, 
-.jp-ThemedContainer .jp-RenderedHTMLCommon h4 code,
-.jp-ThemedContainer .jp-RenderedHTMLCommon h5 code,
-.jp-ThemedContainer .jp-RenderedHTMLCommon h6 code {
-  font-size: 0.65em !important;
-}
-
-.jp-ThemedContainer .jp-RenderedHTMLCommon code, pre {
-  font-family: var(--jp-code-font-family) !important;
+.jp-ThemedContainer .jp-RenderedHTMLCommon code {
+  font-family: var(--jp-code-font-family);
   font-size: var(--tufte-code-inline-font-size);
-  color: var(--tufte-dark-color);
-  line-height: var(--jp-code-line-height) !important; 
+  line-height: var(--jp-code-line-height); 
   background: var(--tufte-code-background-color) !important; 
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+  margin-top: 0px;
+  margin-bottom: 20px;
   padding: 2px 2px 2px 2px !important;
 }
 
-.jp-ThemedContainer .jp-RenderedText code, pre {
-  font-family: var(--jp-code-font-family) !important;
-  font-size: var(--tufte-code-cell-font-size) !important;
-  line-height: var(--jp-code-line-height) !important; 
-  color: var(--tufte-dark-color);
-  background: var(--tufte-code-background-color) !important; 
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  padding: 2px 2px 2px 6px !important;
+div.lm-Widget.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output {
+  margin-bottom: 5px;
 }
 
-.jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputWrapper {
-  margin-top: 0px;
-}
-
-.jp-ThemedContainer .jp-OutputArea-output {
-  font-family: var(--jp-code-font-family) !important;
-  font-size: var(--tufte-code-cell-font-size) !important;
-  line-height: var(--jp-code-line-height) !important; 
-  color: var(--tufte-dark-color);
-  background: var(--tufte-code-background-color) !important; 
-  margin-top: 0px !important;
-  margin-bottom: 5px !important;
-  padding: 2px 2px 2px 6px !important;
+.jp-OutputArea .jp-RenderedText {
   border: 0px;
+  padding-left: 0px;
+  background: var(--tufte-code-background-color);
 }
+
+.jp-OutputArea-output {
+  background: var(--tufte-code-background-color);
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border: 0px;
+  padding-left: 0px;
+}
+
+.jp-ThemedContainer .jp-OutputArea-output code {
+  font-size: var(--tufte-code-cell-font-size);
+  border: 0px;
+  padding: 2px 2px 2px 6px;
+}
+
 
 .jp-Cell-inputCollapser {
   border-radius: 2px 2px 2px 2px;
@@ -790,38 +772,23 @@ all of MD as it is not optimized for dense, information rich UIs.
 }
 
 .jp-InputArea-editor{
-  font-family: var(--jp-code-font-family) !important;
-  font-size: var(--tufte-code-cell-font-size) !important;
-  line-height: var(--jp-code-line-height) !important; 
-  color: var(--tufte-dark-color);
-  background: var(--tufte-code-background-color) !important; 
-  margin-top: 0px !important;
-  margin-bottom: 5px !important;
-  padding: 2px 2px 2px 6px !important;
   border: 0px;
-  padding: 2px 2px 2px 6px !important;  
+  font-size: var(--tufte-code-cell-font-size);
+  background: var(--tufte-code-background-color);
+  margin-top: 0px;
+  margin-bottom: 3px;
 }
 
-.jp-ThemedContainer .jp-CodeCell {
+.jp-CodeCell {
+  font-size: var(--tufte-code-cell-font-size);
   padding-right: var(--tufte-content-padding-right);
   margin-top: 0px;
   margin-bottom: 20px;
 }
 
-.jp-ThemedContainer .jp-RawCell {
+.jp-RawCell {
   padding-right: var(--tufte-content-padding-right);
   margin-top: 0px;
   margin-bottom: 20px;
-}
-
-.jp-Notebook-footer, .jp-Notebook-footer:focus,
-.jp-Notebook-footer:hover  {
-  height: 0px;
-  margin-left: 0;
-  width: 0%;
-  border: 0px solid var(--tufte-offwhite);
-  color: var(--tufte-offwhite);
-  background: none;
-  opacity: 0;
 }
 
